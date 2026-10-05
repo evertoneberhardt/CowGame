@@ -1,0 +1,212 @@
+:root {
+--center-x: calc(100dvw / 2);
+--center-y: calc(100dvh / 2);
+--offset: 10px;
+--color-init: #ff0000;
+--color-end: #800000;
+--time: 5s;
+--curve: ease-in;
+/* ease linear ease-in ease-out ease-in-out cubic-bezier(n,n,n,n) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100dvh;
+    background-color: #333333;
+}
+
+#loading {
+    visibility: visible;
+    position: absolute;
+    width: 100%;
+    height: 100dvh;
+    background-color: black;
+}
+
+#game {
+    visibility: visible;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100dvh;
+    background-color: black;
+}
+
+#canvas {
+    border: 0px;
+}
+
+.box-1 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: calc(var(--center-y) + var(--offset));
+    left: calc(var(--center-x) - var(--offset));
+    animation: box-1 var(--time) infinite var(--curve);
+    background-color: var(--color-init);
+}
+
+.box-2 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: calc(var(--center-y) - var(--offset));
+    left: calc(var(--center-x) - var(--offset));
+    animation: box-2 var(--time) infinite var(--curve);
+    background-color: var(--color-init);
+}
+
+.box-3 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: calc(var(--center-y) - var(--offset));
+    left: calc(var(--center-x) + var(--offset));
+    animation: box-3 var(--time) infinite var(--curve);
+    background-color: var(--color-init);
+}
+
+.box-4 {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: calc(var(--center-y) + var(--offset));
+    left: calc(var(--center-x) + var(--offset));
+    animation: box-4 var(--time) infinite var(--curve);
+    background-color: var(--color-init);
+}
+
+@keyFrames box-1 {
+    0%{
+        background-color: var(--color-init);
+    }
+    25%{
+        left: calc(var(--center-x) - var(--offset));
+        top: calc(var(--center-y) - var(--offset));
+        transform: scale(1.2);
+        background-color: var(--color-end);
+    }
+
+    50%{
+        top: calc(var(--center-y) - var(--offset)); 
+        left: calc(var(--center-x) + var(--offset));
+        transform: scale(1);
+        background-color: var(--color-init);
+    }
+    75%{
+        top: calc(var(--center-y) + var(--offset)); 
+        left: calc(var(--center-x) + var(--offset));
+        transform: scale(1.2);
+        background-color: var(--color-end);
+    }
+    100%{
+        left: calc(var(--center-x) - var(--offset)); 
+        top: calc(var(--center-y) + var(--offset));
+        transform: scale(1);
+        background-color: var(--color-init);
+    }
+
+}
+
+@keyFrames box-2 {
+    0%{background-color: var(--color-init);}
+    25%{
+        left: calc(var(--center-x) + var(--offset));
+        top: calc(var(--center-y) - var(--offset));
+        transform: scale(1.2);
+        background-color: var(--color-end);
+    }
+
+    50%{
+        top: calc(var(--center-y) + var(--offset)); 
+        left: calc(var(--center-x) + var(--offset));
+        transform: scale(1);
+        background-color: var(--color-init);
+    }
+    75%{
+        top: calc(var(--center-y) + var(--offset)); 
+        left: calc(var(--center-x) - var(--offset));
+        transform: scale(1.2);
+        background-color: var(--color-end);
+    }
+    100%{
+        left: calc(var(--center-x) - var(--offset)); 
+        top: calc(var(--center-y) - var(--offset));
+        transform: scale(1);
+        background-color: var(--color-init);
+    }
+
+}
+
+@keyFrames box-3 {
+    0%{background-color: var(--color-init);}
+    25%{
+        left: calc(var(--center-x) + var(--offset));
+        top: calc(var(--center-y) + var(--offset));
+        transform: scale(1.2);
+        background-color: var(--color-end);
+    }
+
+    50%{
+        top: calc(var(--center-y) + var(--offset)); 
+        left: calc(var(--center-x) - var(--offset));
+        transform: scale(1);
+        background-color: var(--color-init);
+    }
+    75%{
+        top: calc(var(--center-y) - var(--offset)); 
+        left: calc(var(--center-x) - var(--offset));
+        transform: scale(1.2);
+        background-color: var(--color-end);
+    }
+    100%{
+        left: calc(var(--center-x) + var(--offset)); 
+        top: calc(var(--center-y) - var(--offset));
+        transform: scale(1);
+        background-color: var(--color-init);
+    }
+
+}
+
+@keyFrames box-4 {
+    0%{background-color: var(--color-init);}
+    25%{
+        left: calc(var(--center-x) - var(--offset));
+        top: calc(var(--center-y) + var(--offset));
+        transform: scale(1.2);
+        background-color: var(--color-end);
+    }
+
+    50%{
+        top: calc(var(--center-y) - var(--offset)); 
+        left: calc(var(--center-x) - var(--offset));
+        transform: scale(1);
+        background-color: var(--color-init);
+    }
+    75%{
+        top: calc(var(--center-y) - var(--offset)); 
+        left: calc(var(--center-x) + var(--offset));
+        transform: scale(1.2);
+        background-color: var(--color-end);
+    }
+    100%{
+        left: calc(var(--center-x) + var(--offset)); 
+        top: calc(var(--center-y) + var(--offset));
+        transform: scale(1);
+        background-color: var(--color-init);
+    }
+
+}

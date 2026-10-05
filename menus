@@ -1,0 +1,15 @@
+menu 1:
+    start
+    options
+
+
+menu pause: 
+    resume
+    options
+    quit
+
+
+menu options:
+    music volume
+    sfx volume
+    fullscreen
